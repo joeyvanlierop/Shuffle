@@ -11,8 +11,8 @@ There are two classes in this project:
  - ShuffleTest:
     - Contains the tests that are responsible for testing the shuffle method.
 ## Task list:
+ - [x] Comments
  - [ ] General Optimizations
- - [ ] Comments
- - [ ] Random number distribution analysis
- - [ ] (Maybe) Translate to a more efficient language
+ - [ ] Performance analysis
+ - [ ] Number distribution analysis
 

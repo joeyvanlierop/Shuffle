@@ -10,14 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ShuffleTest {
     @Test
-    void testShuffle() {
-        testShuffleHelper(1);
-        testShuffleHelper(1000);
+    void testGenerateShuffled() {
+        testGenerateShuffledHelper(1);
+        testGenerateShuffledHelper(1000);
     }
 
-    private void testShuffleHelper(int n) {
+    private void testGenerateShuffledHelper(int n) {
         Set<Integer> numbers = new HashSet<>();
-        int[] shuffled = Shuffle.shuffle(n);
+        int[] shuffled = Shuffle.generateShuffled(n);
 
         assertEquals(n, shuffled.length);
 
@@ -31,15 +31,15 @@ public class ShuffleTest {
     }
 
     @Test
-    void testShuffleIllegalArgument() {
-        testShuffleIllegalArgumentException(0);
-        testShuffleIllegalArgumentException(-100);
+    void testGenerateShuffledIllegalArgument() {
+        testGenerateShuffledIllegalArgumentHelper(0);
+        testGenerateShuffledIllegalArgumentHelper(-100);
     }
 
-    private void testShuffleIllegalArgumentException(int n) {
-        Exception exception = assertThrows(RuntimeException.class, () -> Shuffle.shuffle(n));
+    private void testGenerateShuffledIllegalArgumentHelper(int n) {
+        Exception exception = assertThrows(RuntimeException.class, () -> Shuffle.generateShuffled(n));
 
-        String expectedMessage = "n must be greater than 1";
+        String expectedMessage = "n cannot be less than 1";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
