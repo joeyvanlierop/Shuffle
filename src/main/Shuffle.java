@@ -3,13 +3,9 @@ package main;
 import java.util.Random;
 
 public class Shuffle {
-    public static void main(String[] args) {
-        shuffle(10000);
-    }
-
     public static int[] shuffle(int n) {
         if (n < 1) {
-            throw new IllegalArgumentException("n must be greater than 1");
+            throw new IllegalArgumentException("n cannot be less than 1");
         }
 
         Random random = new Random();
