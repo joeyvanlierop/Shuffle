@@ -1,12 +1,13 @@
 package main;
 
 import java.util.Random;
+import java.util.SplittableRandom;
 
 /**
  * The Shuffle class contains a single method {@link #generateShuffled(int)}
  */
 public class Shuffle {
-    private static Random random = new Random();
+    private static SplittableRandom random = new SplittableRandom();
 
     /**
      * Generates an array of integers from 1 to n with a random order using the Fisher-Yates shuffle

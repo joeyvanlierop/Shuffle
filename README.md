@@ -20,6 +20,8 @@ To graphically analyze that the numbers have a truly random distribution, I simu
 ## Notes
  - Ideally this would have been done in a more performant language than Java, however it was very convenient to setup and test the project. 
  - Instantiating a new Random object each time the shuffle method is called is a waste. Instantiating a static class variable was a viable solution.
+ - On the topic of Random, SplittableRandom proved to be **significantly** faster than random. By using a SplittableRandom object over a Random object, the runtime was shortened by over **50%**.
+ - The random number generation is the bottleneck in this scenario. It takes **significantly** longer to generate a random number than it does to read and write from the ordered and shuffled arrays. 
  - Trying to generate and shuffle the array at the same time (the "inside-out" variant of Fisher–Yates) does not provide any substantial performance increase, and in many cases actually decreased performance by a minuscule amount. 
  - The shuffle method requires an integer greater than or equal to one. This could be altered, however as I was optimizing for speed I chose to throw a runtime exception in the case that a value less than one was inputted. 
 
