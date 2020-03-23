@@ -10,6 +10,12 @@ There are two classes in this project:
     - Contains a single static method named shuffle. The method takes in an integer "n" and produces an array with the integers 1 to "n" in a random order. 
  - ShuffleTest:
     - Contains the tests that are responsible for testing the shuffle method.
+    
+## Number distribution analysis
+To graphically analyze that the numbers have a truly random distribution, I simulated the shuffle 1000000 times and recorded the data. The result shows that each number does in fact have an even chance to appear in any position.  
+
+![Distribution](/img/distribution.png)
+
 
 ## Notes
  - Ideally this would have been done in a more performant language than Java, however it was very convenient to setup and test the project. 
@@ -20,6 +26,6 @@ There are two classes in this project:
 ## Task list
  - [x] Comments
  - [x] General Optimizations
+ - [x] Number distribution analysis
  - [ ] Performance analysis
- - [ ] Number distribution analysis
 
